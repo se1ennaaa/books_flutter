@@ -7,16 +7,17 @@ class Model {
   final int pages;
   final String cover;
 
-  Model(
-      {required this.number,
-      required this.title,
-      required this.originalTitle,
-      required this.releaseDate,
-      required this.description,
-      required this.pages,
-      required this.cover});
+  Model({
+    required this.number,
+    required this.title,
+    required this.originalTitle,
+    required this.releaseDate,
+    required this.description,
+    required this.pages,
+    required this.cover,
+  });
 
- factory Model.fromJson(Map<String, dynamic> json) {
+  factory Model.fromJson(Map<String, dynamic> json) {
     return Model(
       number: json['number'] ?? 0,
       title: json['title'] ?? 'Без названия',
@@ -28,4 +29,3 @@ class Model {
     );
   }
 }
-
