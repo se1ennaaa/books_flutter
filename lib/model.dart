@@ -1,31 +1,31 @@
 class Model {
-  final int number;
-  final String title;
-  final String originalTitle;
-  final String releaseDate;
-  final String description;
-  final int pages;
-  final String cover;
+  final String fullName;
+  final String nickname;
+  final String hogwartsHouse;
+  final String interpreteBy;
+  final Object children;
+  final String image;
+  final String birthdate;
 
   Model({
-    required this.number,
-    required this.title,
-    required this.originalTitle,
-    required this.releaseDate,
-    required this.description,
-    required this.pages,
-    required this.cover,
+    required this.fullName,
+    required this.nickname,
+    required this.hogwartsHouse,
+    required this.interpreteBy,
+    required this.children,
+    required this.image,
+    required this.birthdate,
   });
 
   factory Model.fromJson(Map<String, dynamic> json) {
     return Model(
-      number: json['number'] ?? 0,
-      title: json['title'] ?? 'Без названия',
-      originalTitle: json['originalTitle'] ?? 'No title',
-      releaseDate: json['releaseDate'] ?? 'Неизвестно',
-      description: json['description'] ?? 'Описание отсутствует',
-      pages: json['pages'] ?? 0,
-      cover: json['cover'] ?? '',
+      fullName: json['fullName'] ?? 0,
+      nickname: json['nickname'] ?? 'Без названия',
+      hogwartsHouse: json['hogwartsHouse'] ?? 'No title',
+      interpreteBy: json['interpreteBy'] ?? 'Неизвестно',
+      children: json['children'] ?? 'Описание отсутствует',
+      image: json['image'] ?? 0,
+      birthdate: json['birthdate'] ?? '',
     );
   }
 }

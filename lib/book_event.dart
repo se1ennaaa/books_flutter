@@ -22,7 +22,7 @@ class BookBloc extends Bloc<BookEvent, BookState> {
   BookBloc() : super(BookLoading()) {
     on<FetchBooks>((event, emit) async {
       try {
-        final response = await _dio.get('$baseUrl/en/books');
+        final response = await _dio.get('$baseUrl/en/characters');
         if (response.statusCode == 200) {
           List<Model> books = (response.data as List)
               .map((json) => Model.fromJson(json))

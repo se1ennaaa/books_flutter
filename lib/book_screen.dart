@@ -20,14 +20,29 @@ class BookScreen extends StatelessWidget {
                   final book = state.books[index];
                   return Card(
                     child: ListTile(
-                      leading: Image.network(book.cover, width: 50, height: 80, fit: BoxFit.cover),
-                      title: Text(book.title),
-                      subtitle: Text('Дата выпуска: ${book.releaseDate}\nСтраниц: ${book.pages}'),
+                      leading: Image.network(book.image,
+                          width: 50, height: 80, fit: BoxFit.cover),
+                      title: Text(book.nickname),
+                      subtitle: Text(
+                          'Дата выпуска: ${book.birthdate}\nСтраниц: ${book.hogwartsHouse}'),
                       onTap: () => showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: Text(book.title),
-                          content: Text(book.description),
+                          title: Text(book.nickname),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.network(
+                                book.image,
+                                height: 150,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text('Дата выпуска: ${book.birthdate}'),
+                              Text('Домм: ${book.hogwartsHouse}')
+                            ],
+                          ),
                           actions: [
                             TextButton(
                               onPressed: () => Navigator.pop(context),
